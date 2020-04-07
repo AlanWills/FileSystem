@@ -1,5 +1,5 @@
 set(INCLUDES 
-    ${DIRENT_PROJECT_DIR}/include)
+    ${THIRD_PARTY_DIR}/dirent/include)
 
 set(LIBS 
     Platform
