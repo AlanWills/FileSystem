@@ -1,5 +1,5 @@
 #include "FileSystem/Directory.h"
-#include "Debug/Assert.h"
+#include "Assert/Assert.h"
 
 #include <direct.h>
 

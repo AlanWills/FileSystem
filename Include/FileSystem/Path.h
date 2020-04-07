@@ -1,7 +1,6 @@
 #pragma once
 
-#include "CelesteDllExport.h"
-#include "UtilityHeaders/PlatformHeaders.h"
+#include "Platform/Platform.h"
 
 #include <string>
 #include <stdarg.h>
@@ -21,8 +20,8 @@ namespace Celeste
   {
     public:
       Path() : Path("") { }
-      CelesteDllExport Path(const char* fullPath);
-      CelesteDllExport Path(const std::string& fullPath);
+      Path(const char* fullPath);
+      Path(const std::string& fullPath);
 
       template <typename... T>
       Path(const char* path, const T&... paths);
@@ -33,11 +32,11 @@ namespace Celeste
       template <typename... T>
       Path(const Path& path, const T&... paths);
 
-      CelesteDllExport Path(const Path& path);   // Copy constructor just copies underlying string
-      CelesteDllExport ~Path();
+      Path(const Path& path);   // Copy constructor just copies underlying string
+      ~Path();
 
       /// Assignment operator
-      CelesteDllExport Path& operator=(const Path& other);
+      Path& operator=(const Path& other);
 
       /// Equality operators
       inline bool operator==(const Path& rhs) const { return m_path == rhs.m_path; }
@@ -54,7 +53,7 @@ namespace Celeste
       template <typename T, typename... Args>
       void combine(const T&, const Args&... args);
 
-      CelesteDllExport void combine(const std::string& path);
+      void combine(const std::string& path);
       void combine(const Path& path) { combine(path.as_string()); }
       void combine(const char* path) { combine(std::string(path)); }
 
@@ -62,7 +61,7 @@ namespace Celeste
       /// e.g. for Root\\Directory\\File.txt this would return Root\\Directory
       /// e.g. for Root\\Directory this would return Root and for Root\\Directory\\ this would return Root
       /// Appends the full path onto the output string so anything already in the string will not be removed
-      CelesteDllExport void getParentDirectory(std::string& outParentDirectory) const;
+      void getParentDirectory(std::string& outParentDirectory) const;
       static std::string getParentDirectory(const std::string& str) { return Path(str).getParentDirectory(); }
       std::string getParentDirectory() const
       {
@@ -76,12 +75,12 @@ namespace Celeste
       template <typename T, typename... Args>
       void reset(const T& path, const Args&... args);
 
-      CelesteDllExport bool isAncestorOf(const Path& potentialChild) const;
+      bool isAncestorOf(const Path& potentialChild) const;
 
       /// Will remove the inputted path from this instance's path and return the value as a string
       /// Will fail and return "" if the inputted path is not an ancestor of this path.
       /// Leading delimiters will be trimmed
-      CelesteDllExport std::string relativeTo(const Path& path) const;
+      std::string relativeTo(const Path& path) const;
 
       /// Returns the path represented by this object as a string
       inline const std::string& as_string() const { return m_path; }
@@ -138,14 +137,14 @@ namespace Celeste
   // Symmetric overloads that just call the class operators
 
   //------------------------------------------------------------------------------------------------
-  CelesteDllExport bool operator==(const std::string& lhs, const Path& rhs);
+  bool operator==(const std::string& lhs, const Path& rhs);
 
   //------------------------------------------------------------------------------------------------
-  CelesteDllExport bool operator==(const char* lhs, const Path& rhs);
+  bool operator==(const char* lhs, const Path& rhs);
 
   //------------------------------------------------------------------------------------------------
-  CelesteDllExport bool operator!=(const std::string& lhs, const Path& rhs);
+  bool operator!=(const std::string& lhs, const Path& rhs);
 
   //------------------------------------------------------------------------------------------------
-  CelesteDllExport bool operator!=(const char* lhs, const Path& rhs);
+  bool operator!=(const char* lhs, const Path& rhs);
 }

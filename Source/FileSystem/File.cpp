@@ -1,6 +1,6 @@
 #include "FileSystem/File.h"
 #include "FileSystem/Directory.h"
-#include "Debug/Assert.h"
+#include "Assert/Assert.h"
 
 #include <fstream>
 #include <direct.h>
