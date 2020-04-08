@@ -53,7 +53,7 @@ namespace Celeste
     std::ofstream file(m_filePath.as_string(), std::ios_base::app);
 
     // Now append
-    file << stringToAppend;;
+    file << stringToAppend;
   }
 
   //------------------------------------------------------------------------------------------------
