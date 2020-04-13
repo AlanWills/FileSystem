@@ -6,4 +6,4 @@ set(LIBS
     CelesteStl
     Assert)
 
-build_library(NAME FileSystem FOLDER Celeste/Packages TYPE STATIC INCLUDES "${INCLUDES}" LIBS "${LIBS}")
+build_library(NAME FileSystem FOLDER Celeste TYPE STATIC INCLUDES "${INCLUDES}" LIBS "${LIBS}")
