@@ -7,7 +7,7 @@
 namespace TestFileSystem
 {
   //------------------------------------------------------------------------------------------------
-  TEST_MODULE_INITIALIZE(TestLog_Initialize)
+  TEST_MODULE_INITIALIZE(TestFileSystem_Initialize)
   {
     Celeste::Assertion::setAsserter(std::make_unique<Celeste::NullAsserter>());
   }
