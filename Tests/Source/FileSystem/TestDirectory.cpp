@@ -375,6 +375,48 @@ namespace TestFileSystem
 #pragma region Create Directory Tests
 
   //------------------------------------------------------------------------------------------------
+  TEST_METHOD(Directory_Create_DirectoryPathEmpty_DoesNotCreateDirectory)
+  {
+    Directory dir(Path(""));
+
+    Assert::IsFalse(dir.exists());
+
+    dir.create();
+
+    Assert::IsFalse(dir.exists());
+  }
+
+  //------------------------------------------------------------------------------------------------
+  TEST_METHOD(Directory_Create_DirectoryPathEmpty_ReturnsFalse)
+  {
+    Directory dir(Path(""));
+
+    Assert::IsFalse(dir.exists());
+    Assert::IsFalse(dir.create());
+  }
+
+  //------------------------------------------------------------------------------------------------
+  TEST_METHOD(Directory_Create_DirectoryPathInvalid_DoesNotCreateDirectory)
+  {
+    Directory dir(Path("12312312~"));
+
+    Assert::IsFalse(dir.exists());
+
+    dir.create();
+
+    Assert::IsFalse(dir.exists());
+  }
+
+  //------------------------------------------------------------------------------------------------
+  TEST_METHOD(Directory_Create_DirectoryPathInvalid_ReturnsFalse)
+  {
+    Directory dir(Path("12312312~"));
+
+    Assert::IsFalse(dir.exists());
+    Assert::IsFalse(dir.create());
+  }
+
+  //------------------------------------------------------------------------------------------------
   TEST_METHOD(Directory_Create_DirectoryDoesntExist_ShouldCreateDirectory)
   {
     Directory dir(Path(TempDirectory::getFullPath(), "TestCreate"));

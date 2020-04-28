@@ -38,6 +38,11 @@ namespace Celeste
   //------------------------------------------------------------------------------------------------
   bool Directory::create() const
   {
+    if (m_dirPath.as_string().empty())
+    {
+      return false;
+    }
+
     if (exists(m_dirPath))
     {
       return true;
@@ -47,7 +52,10 @@ namespace Celeste
     if (!parentDirectory.exists())
     {
       // Recursively create all the parent directories
-      parentDirectory.create();
+      if (!parentDirectory.create())
+      {
+        return false;
+      }
     }
 
     bool success = _mkdir(m_dirPath.c_str()) == 0;
