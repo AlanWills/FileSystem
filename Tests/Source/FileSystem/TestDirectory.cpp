@@ -1,6 +1,6 @@
-#include "TestUtils.h"
+#include "TestUtils/TestUtils.h"
 #include "FileSystem/Directory.h"
-#include "AssertExt.h"
+#include "TestUtils/Assert/AssertExt.h"
 
 #include "direct.h"
 

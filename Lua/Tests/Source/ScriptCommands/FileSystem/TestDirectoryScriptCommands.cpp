@@ -1,10 +1,10 @@
-#include "TestUtils.h"
+#include "TestUtils/TestUtils.h"
 #include "ScriptCommands/FileSystem/DirectoryScriptCommands.h"
 #include "Lua/LuaState.h"
 #include "FileSystem/Directory.h"
-#include "TempDirectory.h"
-#include "DirectoryAssert.h"
-#include "LuaAssert.h"
+#include "TestUtils/TestResources/TempDirectory.h"
+#include "TestUtils/Assert/DirectoryAssert.h"
+#include "TestUtils/Assert/LuaAssert.h"
 
 using namespace Celeste;
 using LuaState = Celeste::Lua::LuaState;

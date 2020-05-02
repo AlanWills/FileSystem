@@ -1,4 +1,4 @@
-#include "TestUtils.h"
+#include "TestUtils/TestUtils.h"
 #include "ScriptCommands/FileSystem/FileSystemScriptCommands.h"
 #include "Lua/LuaState.h"
 

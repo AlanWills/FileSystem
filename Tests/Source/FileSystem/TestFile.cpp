@@ -1,9 +1,9 @@
-#include "TestUtils.h"
+#include "TestUtils/TestUtils.h"
 
 #include "FileSystem/File.h"
 #include "FileSystem/Directory.h"
-#include "FileAssert.h"
-#include "AssertExt.h"
+#include "TestUtils/Assert/FileAssert.h"
+#include "TestUtils/Assert/AssertExt.h"
 
 #include <fstream>
 
