@@ -6,7 +6,7 @@ using namespace Celeste;
 
 namespace TestFileSystem
 {
-  TEST_UTILS_TEST_CLASS(TestPath)
+  BASE_TEST_CLASS(TestPath)
 
 #pragma region Constructor Tests
 

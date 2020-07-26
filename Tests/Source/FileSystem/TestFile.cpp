@@ -16,7 +16,7 @@ namespace TestFileSystem
   static std::string testFileName = "TestFile.txt";
   static Path testFilePath = Path(Directory::getExecutingAppDirectory(), testFileName);
 
-  TEST_UTILS_TEST_CLASS(TestFile)
+  BASE_TEST_CLASS(TestFile)
 
   //------------------------------------------------------------------------------------------------
   void checkTestFileExists()

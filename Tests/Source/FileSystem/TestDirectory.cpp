@@ -9,7 +9,7 @@ using namespace Celeste;
 
 namespace TestFileSystem
 {
-  TEST_UTILS_TEST_CLASS(TestDirectory)
+  BASE_TEST_CLASS(TestDirectory)
 
   //------------------------------------------------------------------------------------------------
   template <typename T>

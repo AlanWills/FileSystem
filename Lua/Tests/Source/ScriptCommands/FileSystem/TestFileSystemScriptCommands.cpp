@@ -7,7 +7,7 @@ using LuaState = Celeste::Lua::LuaState;
 
 namespace TestFileSystem::Lua::ScriptCommands
 {
-  TEST_UTILS_TEST_CLASS(TestFileSystemScriptCommands)
+  BASE_TEST_CLASS(TestFileSystemScriptCommands)
 
 #pragma region Initialize Tests
 
